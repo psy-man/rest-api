@@ -77,3 +77,15 @@ export const update = (req, res) =>
                 data: `Error: ${err}`
             }));
 
+export const remove = (req, res) =>
+    Product.findByIdAndRemove(req.params.id).exec()
+        .then(() =>
+            res.json({
+                status: true,
+                data: `Deleted!`
+            }))
+        .catch(err =>
+            res.json(500, {
+                status: false,
+                data: `Error: ${err}`
+            }));
