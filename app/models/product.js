@@ -4,21 +4,21 @@ import {ImageSchema} from "./image";
 const Schema = mongoose.Schema;
 
 const ProductSchema = new Schema({
-    title: {
-        type: String,
-        required: true,
-        trim: true
-    },
-    variants: [VariantSchema],
-    images: [ImageSchema],
-    created: {
-        type: Date,
-        default: Date.now
-    },
-    modified: {
-        type: Date,
-        default: Date.now
-    }
+  title: {
+    type: String,
+    required: [true, 'Title is required'],
+    trim: true
+  },
+  brand: {
+    type: String,
+    trim: true
+  },
+  variants: [VariantSchema],
+  images: [ImageSchema],
+  modified: {
+    type: Date,
+    default: Date.now
+  }
 });
 
 export default mongoose.model('Product', ProductSchema);

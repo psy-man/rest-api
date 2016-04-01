@@ -1,9 +1,11 @@
 {
   "name": "restAPI",
   "version": "0.0.1",
+  "author": "Eugene Filipyev",
   "scripts": {
     "start": "nodemon app/server --exec babel-node",
-    "test": "mocha --compilers js:babel-register --watch",
+    "test": "mocha --compilers js:babel-register",
+    "test-watch": "mocha --compilers js:babel-register --watch",
     "build": "babel app/ -d build",
     "serve": "npm run build && node build/server.js"
   },
